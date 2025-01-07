@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    app: nginx
+    app: webapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: webapp
   template:
     metadata:
       labels:
-        app: nginx
+        app: webapp
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: webapp1
+        image: cicdacr0701.azurecr.io/webapps/webapp1:latest
         ports:
         - containerPort: 80
