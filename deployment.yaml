@@ -20,7 +20,8 @@ spec:
           image: shabareesh7/webapp:v1.0
           ports:
             - containerPort: 80
-
+      imagePullSecrets:
+      - name: my-secret
 ---
 apiVersion: v1
 kind: Service
