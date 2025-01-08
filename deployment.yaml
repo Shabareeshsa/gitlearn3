@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp1
+  name: webapp
   labels:
-    app: webapp1
+    app: webapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webapp1
+      app: webapp
   template:
     metadata:
       labels:
-        app: webapp1
+        app: webapp
     spec:
       containers:
-        - name: webapp1
-          image: shabareesh7/webapp/webapp1:latest
+        - name: webapp
+          image: shabareesh7/webapp:v1.0
           ports:
             - containerPort: 80
 
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp1-svc
+  name: webapp-svc
 spec:
   selector:
-    app: webapp1
+    app: webapp
   ports:
-    - name: name-of-service-port
+    - name: conatinerport
       protocol: TCP
       port: 80
       targetPort: 80
