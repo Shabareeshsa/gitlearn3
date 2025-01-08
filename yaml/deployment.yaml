@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp1
-          image: cicdacr0701.azurecr.io/webapp1:latest
+          image: shabareesh7/webapp/webapp1:latest
           ports:
             - containerPort: 80
 
